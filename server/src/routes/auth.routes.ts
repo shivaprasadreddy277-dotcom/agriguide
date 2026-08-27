@@ -88,6 +88,16 @@ router.post("/login", authLimiter, async (req, res, next) => {
       });
     }
 
+    if (!user.passwordHash) {
+      return res.status(401).json({
+        success: false,
+        error: {
+          code: "OAUTH_USER_PASSWORD_MISSING",
+          message: "This account was registered using Google. Please log in using Google Sign-In.",
+        },
+      });
+    }
+
     const isValid = await verifyPassword(data.password, user.passwordHash);
     if (!isValid) {
       return res.status(401).json({
