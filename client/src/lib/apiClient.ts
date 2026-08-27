@@ -21,9 +21,11 @@ async function request(path: string, options: RequestInit = {}) {
     headers.set("Content-Type", "application/json");
   }
 
-  const response = await fetch(path, {
+  const apiBase = import.meta.env.VITE_API_URL || "";
+  const response = await fetch(`${apiBase}${path}`, {
     ...options,
     headers,
+    credentials: "include",
   });
 
   let json: any;
