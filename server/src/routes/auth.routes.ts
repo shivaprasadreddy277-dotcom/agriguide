@@ -36,6 +36,7 @@ router.post("/register", authLimiter, async (req, res, next) => {
         passwordHash,
         data.preferredLanguage,
         data.unitSystem,
+        null,
         client
       );
 
