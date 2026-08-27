@@ -9,9 +9,9 @@ import { errorHandler } from "./middleware/errors.js";
 
 // Routes imports
 import authRoutes from "./routes/auth.routes.js";
-import farmRoutes from "./routes/farms.routes.ts";
-import fieldRoutes from "./routes/fields.routes.ts";
-import advisoryRoutes from "./routes/advisories.routes.ts";
+import farmRoutes from "./routes/farms.routes.js";
+import fieldRoutes from "./routes/fields.routes.js";
+import advisoryRoutes from "./routes/advisories.routes.js";
 import healthRoutes from "./routes/health.routes.js";
 
 const app = express();

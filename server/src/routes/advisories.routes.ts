@@ -2,7 +2,7 @@ import { Router } from "express";
 import { AdvisoryRepository } from "../repositories/advisory.repository.js";
 import { FarmRepository } from "../repositories/farm.repository.js";
 import { FieldRepository } from "../repositories/field.repository.js";
-import { generateAdvisoryReport, ImageInput } from "../ai/advisoryGenerator.ts";
+import { generateAdvisoryReport, ImageInput } from "../ai/advisoryGenerator.js";
 import { advisoryRequestSchema, feedbackSchema, advisoryQuerySchema } from "shared";
 import { requireAuth } from "../middleware/auth.js";
 import { advisoryLimiter } from "../middleware/rateLimit.js";
